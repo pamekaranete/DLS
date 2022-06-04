@@ -1,0 +1,35 @@
+lang -> expr+
+expr -> expr_assign | expr_while | expr_if
+expr_assign -> VAR ASSIGN_OP value (OPERATOR value)*
+
+expr_while -> WHILE_KW L_BRACE expr_value R_BRACE exec_block
+exec_block ->  L_SQR_BR expr+ R_SQR_BR
+
+expr_if -> IF_KW If_head If_body
+If_head -> L_BRACE expr_value R_BRACE
+expr_value -> (value ) (CONDITIONAL_OP value)*
+
+переменная
+КОНСОЛЬ
+
+ЦИКЛ(счет=0,а<б,а++){
+    код
+assing_list -> LIST VAR
+add_to_list -> VAR DOT ADD_TO_LIST_KW
+remove_to_list -> VAR DOT REMOVE_TO_LIST_KW
+reverse_to_list -> VAR DOT REVERSE_TO_LIST_KW
+find_to_list -> VAR
+get_element_from_list -> new linked list
+вывод
+
+        VAR -> "^[A-Za-z]"
+        NUMBER -> ^0|[1-9][0-9]
+        OPERATORS -> ^[-|+|/|\*]$
+        ASSIGNMENT_OPERATOR -> ^=$
+        L_BRACE -> (
+        R_BRACE -> )
+        L_SQR_BR -> {
+        R_SQR_BR -> }
+
+
+
